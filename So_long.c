@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/18 16:14:17 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/20 17:37:59 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	main(int argc, char **argv)
 	map.mlx = mlx_init();
 	if (!map.mlx)
 		ft_error(0);
-	map.win = mlx_new_window(map.mlx, 1920, 1080, "So_long");
-	//ft_display(&map);
-	//mlx_mouse_hook(map.win, ft_mouse, &map);
+	map.win = mlx_new_window(map.mlx, (map.x * 50), (map.y * 50), "So_long");
+	ft_display(&map);
 	mlx_key_hook(map.win, keyboard, &map);
+
 	mlx_loop(map.mlx);
 }
 
@@ -50,14 +50,14 @@ int	keyboard(int keycode, t_map *map)
 		exit(0);
 	}
 	else if (keycode == 122)
-		map->pl.y -= 1;
+		ft_move_left(map);
 	else if (keycode == 115)
-		map->pl.y += 1;
+		ft_move_down(map);
 	else if (keycode == 113)
-		map->pl.x -= 1;
+		ft_move_up(map);
 	else if (keycode == 100)
-		map->pl.x += 1;
+		ft_move_right(map);
 	mlx_clear_window(map->mlx, map->win);
-	//ft_display(map);
+	ft_display(map);
 	return (0);
 }

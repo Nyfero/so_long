@@ -6,7 +6,7 @@
 #    By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 14:07:19 by gsap              #+#    #+#              #
-#    Updated: 2021/09/16 17:50:29 by gsap             ###   ########.fr        #
+#    Updated: 2021/09/20 17:20:37 by gsap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ MLX_FLAG = -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
 FS = -fsanitize=address -static-libsan -g
 
-SRCS = So_long.c ft_parsing.c ft_check_map.c ft_error.c
+SRCS = So_long.c ft_parsing.c ft_check_map.c ft_error.c ft_display.c ft_move.c
 
 OBJS = $(SRCS:.c=.o)
 

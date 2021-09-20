@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/18 16:10:10 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/20 17:47:01 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ typedef struct s_player
 typedef struct s_img
 {
 	void	*img;
-	void	*addr;
-	int		bpb;
-	int		ll;
-	int		end;
+
+	char	*path;
+	int		wid;
+	int		hei;
 }	t_img;
 
 typedef struct s_map
@@ -54,7 +54,6 @@ typedef struct s_map
 
 int	main(int argc, char **argv);
 int	ft_mouse(int mouse, int x, int y, t_map *map);
-int	ft_close(int keycode, t_map *map);
 int	keyboard(int keycode, t_map *map);
 
 void	ft_error(int err);
@@ -68,5 +67,13 @@ void	ft_check_file(char *file);
 void	ft_check_valid_map(t_map *map, char *file);
 void	ft_map_closed(t_map * map, char *file);
 void	ft_well_composed(t_map *map, char *file);
+
+void	ft_display(t_map *map);
+
+void	ft_move_up(t_map *map);
+void	ft_move_down(t_map *map);
+void 	ft_move_left(t_map *map);
+void 	ft_move_right(t_map *map);
+
 
 #endif
