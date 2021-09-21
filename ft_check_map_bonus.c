@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_map.c                                     :+:      :+:    :+:   */
+/*   ft_check_map_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 16:19:12 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/21 17:22:22 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_check_valid_map(t_map *map, char *file)
 	map->p = 0;
 	map->e = 0;
 	ft_map_closed(map, file);
-	ft_well_composed(map, file);
+	ft_well_composed_bonus(map, file);
 	if (map->c == 0 || map->p != 1 || map->e == 0)
 		ft_error_parsing(4);
 	return ;
@@ -92,13 +92,20 @@ void	ft_map_closed(t_map *map, char *file)
 	close(fd);
 }
 
-void	ft_well_composed(t_map *map, char *file)
+void	ft_well_composed_bonus(t_map *map, char *file)
 {
 	int		fd;
+
+	fd = open(file, O_RDONLY);
+	ft_check_in_map(map, fd);
+	close(fd);
+}
+
+void	ft_check_in_map(t_map *map, int fd)
+{
 	int		i;
 	char	*tmp;
 
-	fd = open(file, O_RDONLY);
 	tmp = get_next_line(fd);
 	while (tmp != NULL)
 	{
@@ -106,7 +113,7 @@ void	ft_well_composed(t_map *map, char *file)
 		while (tmp[++i])
 		{
 			if (tmp[i] != 'C' && tmp[i] != 'E' && tmp[i] != 'P' && tmp[i] != '0'
-				&& tmp[i] != '1')
+				&& tmp[i] != '1' && tmp[i] != 'A')
 				ft_error_parsing(5);
 			else if (tmp[i] == 'C')
 				map->c++;
@@ -118,5 +125,5 @@ void	ft_well_composed(t_map *map, char *file)
 		free(tmp);
 		tmp = get_next_line(fd);
 	}
-	close(fd);
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/16 17:30:20 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/21 16:12:48 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_error(int err)
 	exit(1);
 }
 
-void 	ft_error_parsing(int err)
+void	ft_error_parsing(int err)
 {
 	write(2, "Error\n", 6);
 	if (err == 1)

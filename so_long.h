@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/20 17:47:01 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/21 17:22:31 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@ typedef struct s_player
 typedef struct s_img
 {
 	void	*img;
-
 	char	*path;
-	int		wid;
-	int		hei;
+	int		width;
+	int		height;
 }	t_img;
 
 typedef struct s_map
@@ -41,10 +40,13 @@ typedef struct s_map
 	void		*mlx;
 	void		*win;
 
+	t_img		img;
+
 	int			x;
 	int			y;
 	char		**map;
 
+	int			mv;
 	size_t		c;
 	size_t		p;
 	size_t		e;
@@ -52,12 +54,13 @@ typedef struct s_map
 	t_player	pl;
 }	t_map;
 
-int	main(int argc, char **argv);
-int	ft_mouse(int mouse, int x, int y, t_map *map);
-int	keyboard(int keycode, t_map *map);
+int		main(int argc, char **argv);
+int		keyboard(int keycode, t_map *map);
+void	ft_win(t_map *map);
+int		ft_end(t_map *map);
 
 void	ft_error(int err);
-void 	ft_error_parsing(int err);
+void	ft_error_parsing(int err);
 
 void	ft_parsing(t_map *map, char *file);
 void	ft_save_map(t_map *map, char *file);
@@ -65,15 +68,35 @@ void	ft_save_map(t_map *map, char *file);
 void	ft_map_size(t_map *map, char *file);
 void	ft_check_file(char *file);
 void	ft_check_valid_map(t_map *map, char *file);
-void	ft_map_closed(t_map * map, char *file);
+void	ft_map_closed(t_map *map, char *file);
 void	ft_well_composed(t_map *map, char *file);
 
-void	ft_display(t_map *map);
+int		ft_display(t_map *map);
+void	ft_pick_image(t_map *map, int i, int j);
 
 void	ft_move_up(t_map *map);
 void	ft_move_down(t_map *map);
-void 	ft_move_left(t_map *map);
-void 	ft_move_right(t_map *map);
+void	ft_move_left(t_map *map);
+void	ft_move_right(t_map *map);
 
+/*
+**
+** ||-- Partie Bonus --||
+**
+*/
+int		ft_display_bonus(t_map *map);
+void	ft_pick_image_bonus(t_map *map, int i, int j);
+void	ft_compt_bonus(t_map *map);
+
+void	ft_win_bonus(t_map *map);
+
+void	ft_move_up_bonus(t_map *map);
+void	ft_move_down_bonus(t_map *map);
+void	ft_move_left_bonus(t_map *map);
+void	ft_move_right_bonus(t_map *map);
+
+void	ft_parsing_bonus(t_map *map, char *file);
+void	ft_well_composed_bonus(t_map *map, char *file);
+void	ft_check_in_map(t_map *map, int fd);
 
 #endif
