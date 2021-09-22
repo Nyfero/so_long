@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 17:36:32 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/22 14:15:12 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_pick_image_bonus(t_map *map, int i, int j)
 			map->pl.x = j;
 		if (map->pl.y == 0)
 			map->pl.y = i;
+		map->pl.p = 0;
 	}
 	else if (map->map[i][j] == 'E')
 		map->img.path = "./img/End.xpm";

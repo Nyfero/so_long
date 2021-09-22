@@ -6,7 +6,7 @@
 #    By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 14:07:19 by gsap              #+#    #+#              #
-#    Updated: 2021/09/21 18:07:03 by gsap             ###   ########.fr        #
+#    Updated: 2021/09/22 14:18:20 by gsap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ MLX_FLAG = -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 SRCS = So_long.c ft_parsing.c ft_check_map.c ft_error.c ft_display.c ft_move.c
 
 SB = So_long_bonus.c ft_parsing_bonus.c ft_display_bonus.c ft_move_bonus.c \
-	ft_check_map_bonus.c ft_error.c
+	ft_check_map_bonus.c ft_error.c ft_multiple_frame.c
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 17:22:31 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/22 14:18:13 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_player
 {
 	int	x;
 	int	y;
+	int	p;
 }	t_player;
 
 typedef struct s_img
@@ -98,5 +99,8 @@ void	ft_move_right_bonus(t_map *map);
 void	ft_parsing_bonus(t_map *map, char *file);
 void	ft_well_composed_bonus(t_map *map, char *file);
 void	ft_check_in_map(t_map *map, int fd);
+
+void	ft_multiple_frame(t_map *map);
+void	ft_switch_posture(t_map *map);
 
 #endif

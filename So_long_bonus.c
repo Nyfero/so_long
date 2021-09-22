@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 17:33:48 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/22 14:19:39 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int	main(int argc, char **argv)
 	mlx_key_hook(map.win, keyboard, &map);
 	mlx_hook(map.win, 12, 1L << 15, ft_display_bonus, &map);
 	mlx_hook(map.win, 33, 1L << 5, ft_end, &map);
+	ft_multiple_frame(&map);
 	mlx_loop(map.mlx);
+	return (0);
 }
 
 int	keyboard(int keycode, t_map *map)
