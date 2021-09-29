@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 16:12:48 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/29 16:26:02 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(int err)
 {
-	write(2, "Error\n", 5);
+	write(2, "Error\n", 6);
 	if (err == 1)
 		write(2, "No file submited\n", 17);
 	else if (err == 2)

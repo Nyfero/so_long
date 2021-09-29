@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 17:22:22 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/29 15:15:36 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_check_valid_map(t_map *map, char *file)
 	map->c = 0;
 	map->p = 0;
 	map->e = 0;
+	map->a = 0;
 	ft_map_closed(map, file);
 	ft_well_composed_bonus(map, file);
 	if (map->c == 0 || map->p != 1 || map->e == 0)
@@ -121,6 +122,8 @@ void	ft_check_in_map(t_map *map, int fd)
 				map->p++;
 			else if (tmp[i] == 'E')
 				map->e++;
+			else if (tmp[i] == 'A')
+				map->a++;
 		}
 		free(tmp);
 		tmp = get_next_line(fd);

@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/21 17:20:40 by gsap             ###   ########.fr       */
+/*   Updated: 2021/09/29 15:46:51 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void	ft_parsing_bonus(t_map *map, char *file)
 	if (!map->map)
 		ft_error(0);
 	map->map[map->y] = 0;
-	ft_save_map(map, file);
+	map->enm = (t_enm *)malloc(sizeof(t_enm) * (map->a + 1));
+	if (!map->enm)
+		ft_error(0);
+	map->e = map->a - 1;
+	ft_create_map(map, file);
 }
 
-void	ft_save_map(t_map *map, char *file)
+void	ft_create_map(t_map *map, char *file)
 {
 	int		fd;
 	int		i;
@@ -43,11 +47,32 @@ void	ft_save_map(t_map *map, char *file)
 		}
 		j = -1;
 		while (tmp[++j])
-			map->map[i][j] = tmp[j];
+			ft_save_map_bonus(map, i, j, tmp);
 		map->map[i][j] = 0;
 		free(tmp);
 		tmp = get_next_line(fd);
 		i++;
 	}
 	close(fd);
+}
+
+void	ft_save_map_bonus(t_map *map, int i, int j, char *tmp)
+{
+	if (tmp[j] != 'P' && tmp[j] != 'A')
+		map->map[i][j] = tmp[j];
+	else
+	{
+		map->map[i][j] = '0';
+		if (tmp[j] == 'P')
+		{
+			map->pl.x = j;
+			map->pl.y = i;
+		}
+		else
+		{
+			map->enm[map->e].x = j;
+			map->enm[map->e--].y = i;
+		}
+	}
+	return ;
 }
