@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/30 18:31:04 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/01 14:57:20 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_ennemie
 {
 	int	x;
 	int	y;
+	int	lm;
 }	t_enm;
 
 typedef struct s_img
@@ -95,9 +96,9 @@ int		ft_end(t_map *map);
 void	ft_parsing_bonus(t_map *map, char *file);
 void	ft_create_map(t_map *map, char *file);
 void	ft_save_map_bonus(t_map *map, int i, int j, char *tmp);
-
 void	ft_map_size(t_map *map, char *file);
 void	ft_check_file(char *file);
+
 void	ft_check_valid_map(t_map *map, char *file);
 void	ft_map_closed(t_map *map, char *file);
 void	ft_well_composed_bonus(t_map *map, char *file);
@@ -108,7 +109,7 @@ void	ft_error_parsing(int err, char *tmp);
 
 int		ft_display_bonus(t_map *map);
 void	ft_place_player(t_map *map, t_img player);
-void 	ft_place_ennemie(t_map *map);
+void	ft_place_ennemie(t_map *map);
 void	ft_pick_image_bonus(t_map *map, int i, int j);
 void	ft_compt_bonus(t_map *map);
 
@@ -127,5 +128,11 @@ void	ft_init_player_anm(t_map *map);
 void	ft_init_rest(t_map *map);
 void	ft_free_img(t_map *map);
 void	ft_more_free_img(t_map *map);
+
+void	ft_move_ennemie(t_map *map);
+void	ft_enm_up(t_map *map, int i);
+void	ft_enm_down(t_map *map, int i);
+void	ft_enm_left(t_map *map, int i);
+void	ft_enm_right(t_map *map, int i);
 
 #endif

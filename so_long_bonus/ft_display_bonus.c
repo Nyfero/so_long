@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/30 18:30:11 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/01 14:57:44 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_place_player(t_map *map, t_img player)
 	return ;
 }
 
-void 	ft_place_ennemie(t_map *map)
+void	ft_place_ennemie(t_map *map)
 {
 	int	tmp;
 

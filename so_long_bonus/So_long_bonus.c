@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/30 18:36:39 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/01 14:55:31 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,39 @@ int	keyboard(int keycode, t_map *map)
 {
 	if (keycode == 65307)
 		ft_end(map);
-	else if (keycode == 122)
-		ft_go_up(map);
-	else if (keycode == 115)
-		ft_go_down(map);
-	else if (keycode == 113)
-		ft_go_left(map);
-	else if (keycode == 100)
-		ft_go_right(map);
+	else if (keycode == 122 || keycode == 115 || keycode == 100
+		|| keycode == 113)
+	{
+		if (keycode == 122)
+			ft_go_up(map);
+		else if (keycode == 115)
+			ft_go_down(map);
+		else if (keycode == 113)
+			ft_go_left(map);
+		else if (keycode == 100)
+			ft_go_right(map);
+		ft_display_bonus(map);
+		ft_move_ennemie(map);
+	}
 	ft_display_bonus(map);
 	return (0);
 }
 
-void ft_loose(t_map *map, int tmp)
+void	ft_loose(t_map *map, int tmp)
 {
 	int	i;
 
 	i = 0;
-	while(i++ < 4000)
+	while (i++ < 4000)
 	{
 		mlx_put_image_to_window(map->mlx, map->win, \
 			map->ie.e.img, (map->enm[tmp].x * 50), (map->enm[tmp].y * 50));
 	}
 	i = 0;
-	while(i++ < 8000)
+	while (i++ < 8000)
 		ft_place_player(map, map->pl.dd1);
 	i = 0;
-	while(i++ < 16000)
+	while (i++ < 16000)
 		ft_place_player(map, map->pl.dd2);
 	ft_putstr("Defeat");
 	ft_putchar('\n');
