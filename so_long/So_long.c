@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/30 16:09:53 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/01 15:31:35 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	ft_img_init(t_map *map)
 	&map->end.width, &map->end.height);
 	map->pl.i.img = mlx_xpm_file_to_image(map->mlx, "./img/Player.xpm", \
 	&map->pl.i.width, &map->pl.i.height);
-	if (map->pl.i.img == NULL || map->fl.img == NULL|| map->wl.img == NULL
-	|| map->ck.img == NULL || map->end.img == NULL)
+	if (map->pl.i.img == NULL || map->fl.img == NULL || map->wl.img == NULL
+		|| map->ck.img == NULL || map->end.img == NULL)
 	{
 		ft_free_img(map);
 		ft_free_ls(map->map);
