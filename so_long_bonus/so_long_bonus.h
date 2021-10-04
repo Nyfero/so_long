@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/10/01 14:57:20 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/03 12:10:57 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void	ft_check_in_map(t_map *map, int fd);
 
 void	ft_error(int err);
 void	ft_error_parsing(int err, char *tmp);
+void	ft_do_i_have_a_screen(t_map *map);
 
 int		ft_display_bonus(t_map *map);
 void	ft_place_player(t_map *map, t_img player);

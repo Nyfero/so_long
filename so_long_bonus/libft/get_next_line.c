@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 08:49:41 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/16 13:52:14 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/03 12:04:24 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ char	*ft_read_file(int fd, char *buf, char *tmp)
 	long int	rd;
 
 	rd = read(fd, buf, 1);
+	if (rd == 0)
+	{
+		free(tmp);
+		return (NULL);
+	}
 	buf[rd] = 0;
 	while ((ft_check_new_line(buf) == -1) && rd > 0)
 	{
@@ -25,11 +30,6 @@ char	*ft_read_file(int fd, char *buf, char *tmp)
 			return (NULL);
 		rd = read(fd, buf, 1);
 		buf[rd] = 0;
-	}
-	if (rd == 0)
-	{
-		free(tmp);
-		return (NULL);
 	}
 	return (tmp);
 }
@@ -45,6 +45,8 @@ char	*get_next_line(int fd)
 	if (!tmp)
 		return (NULL);
 	tmp = ft_read_file(fd, buf, tmp);
+	if (!tmp)
+		return (NULL);
 	return (tmp);
 }
 

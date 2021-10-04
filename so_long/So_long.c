@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/10/01 15:31:35 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/03 17:17:59 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	map.pl.x = 0;
 	map.pl.y = 0;
 	map.win = mlx_new_window(map.mlx, (map.x * 50), (map.y * 50), "So_long");
+	ft_do_i_have_a_screen(&map);
 	ft_display(&map);
 	mlx_key_hook(map.win, keyboard, &map);
 	mlx_hook(map.win, 12, 1L << 15, ft_display, &map);

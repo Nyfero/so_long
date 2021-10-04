@@ -6,7 +6,7 @@
 #    By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 14:07:19 by gsap              #+#    #+#              #
-#    Updated: 2021/10/01 12:09:57 by gsap             ###   ########.fr        #
+#    Updated: 2021/10/03 17:19:05 by gsap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = clang
 
 FLAGS = -Wall -Wextra -Werror
 
-MLX_FLAG = -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+MLX_FLAG = -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm
 
 SRCS = So_long_bonus.c ft_parsing_bonus.c ft_display_bonus.c ft_move_bonus.c \
 	ft_check_map_bonus.c ft_error.c ft_multiple_frame.c ft_move_bonus_utils.c \

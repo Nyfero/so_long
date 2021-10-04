@@ -6,7 +6,7 @@
 /*   By: gsap <gsap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 12:09:25 by gsap              #+#    #+#             */
-/*   Updated: 2021/09/30 17:23:33 by gsap             ###   ########.fr       */
+/*   Updated: 2021/10/03 12:11:11 by gsap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ void	ft_error_parsing(int err, char *tmp)
 		write(2, "Character(s) not allowed\n", 25);
 	free(tmp);
 	exit(1);
+}
+
+void	ft_do_i_have_a_screen(t_map *map)
+{
+	if (map->win == NULL)
+	{
+		write(2, "Terrible nouvelle Messire !\nNous n'avons pas d'ecran\n", 53);
+		ft_free_img(map);
+		ft_free_ls(map->map);
+		mlx_destroy_display(map->mlx);
+		free(map->mlx);
+		ft_error(0);
+	}
 }
